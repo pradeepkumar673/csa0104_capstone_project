@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { type } from "os";
-import { emitWarning } from "process";
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,7 +14,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-        },
+    },
     phone: {
         type: String,
         required: true,
@@ -32,9 +30,27 @@ const userSchema = new mongoose.Schema({
     },
     secret_password: {
         type: String
+    },
+    contacts: [{
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        addedAt: {
+            type: Date,
+            default: Date.now
+        }
+    }],
+    status: {
+        type: String,
+        default: "Hey there! I'm using Pradeep's Chat App"
+    },
+    lastSeen: {
+        type: Date,
+        default: Date.now
     }
 },
-    {timestamps: true});
+{ timestamps: true });
 
 const User = mongoose.model("User", userSchema);
-export default User
+export default User;

@@ -1,14 +1,14 @@
 {
   "name": "pradeep_chatting_application",
   "version": "1.0.0",
-  "description": "made by the great pradeepkuamr",
+  "description": "made by the great pradeepkumar",
   "license": "ISC",
   "author": "the legendary pradeepkumar",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "dependencies": {
@@ -18,8 +18,9 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongodb": "^4.17.2",
     "mongoose": "^9.0.1",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "socket.io": "^4.8.1",
+    "multer": "^1.4.5-lts.1"
   }
 }
